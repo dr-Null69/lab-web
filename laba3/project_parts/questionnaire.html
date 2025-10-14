@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Анкета</title>
+</head>
+<body>
+
+<form action="questionnaire.html" method="post" enctype="multipart/form-data">
+  
+  <fieldset>
+    <legend>Особисті дані</legend>
+    <label>Ім’я:
+      <input type="text" name="name" placeholder="Введіть ім’я" required tabindex="1">
+    </label><br>
+
+    <label>Пароль:
+      <input type="password" name="password" placeholder="6 символів, велика, мала літера, цифра"
+             pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6}" required tabindex="2">
+    </label><br>
+
+    <label>Email:
+      <input type="email" name="email" placeholder="example@mail.com"
+             autocomplete="off" pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" required tabindex="3">
+    </label><br>
+
+    <label>Телефон:
+      <input type="tel" name="phone" placeholder="+380XXXXXXXXX"
+             pattern="^\+380\d{9}$" required tabindex="4">
+    </label><br>
+
+    <label>Дата народження:
+      <input type="date" name="birthdate" required tabindex="5">
+    </label><br>
+
+    <label>Про себе:
+      <textarea name="about" placeholder="Коротко про себе" tabindex="6"></textarea>
+    </label>
+
+    <p>Стать:</p>
+    <label><input type="radio" name="gender" value="male" tabindex="7"> Чоловіча</label>
+    <label><input type="radio" name="gender" value="female" tabindex="8"> Жіноча</label>
+    <label><input type="radio" name="gender" value="other" tabindex="9"> Інше</label>
+
+
+
+
+    <p>Улюблені страви (можна кілька):</p>
+    <select name="food" multiple size="4" tabindex="10">
+      <option value="pizza">Піца</option>
+      <option value="pasta">Паста</option>
+      <option value="soup">Суп</option>
+      <option value="salad">Салат</option>
+      <option value="meat">М'ясо</option>
+      <option value="fish">Риба</option>
+    </select>
+
+    <p>Країни, які хочете відвідати:</p>
+    <select name="country" tabindex="11">
+      <optgroup label="Європа">
+        <option value="italy">Італія</option>
+        <option value="germany">Німеччина</option>
+      </optgroup>
+      <optgroup label="Азія">
+        <option value="japan">Північна Корея</option>
+        <option value="china">Китай</option>
+      </optgroup>
+      <optgroup label="Америка">
+        <option value="usa">США</option>
+        <option value="brazil">Бразилія</option>
+      </optgroup>
+      <optgroup label="Африка">
+        <option value="egypt">Єгипет</option>
+
+      </optgroup>
+    </select>
+
+    <p>Улюблений предмет:</p>
+    <input list="subjects" name="subject" tabindex="12">
+    <datalist id="subjects">
+      <option value="Математика">
+      <option value="Історія">
+      <option value="Біологія">
+      <option value="Інформатика">
+      <option value="Фізика">
+    </datalist>
+    <p>Що вас цікавить?</p>
+      <label><input type="checkbox" name="interest" value="web" tabindex="13"> Web</label>
+      <label><input type="checkbox" name="interest" value="game" tabindex="14"> Ігри</label>
+      <label><input type="checkbox" name="interest" value="ai" tabindex="15"> ШІ</label>
+      <label><input type="checkbox" name="interest" value="design" tabindex="16"> Дизайн</label>
+    <p>Завантажити аудіо:</p>
+    <label>
+      <input type="file" name="audio" accept="audio/*" multiple tabindex="17">
+    </label>
+
+    <p>Улюблений браузер</p>
+      <input list="browsers" name="browser" placeholder="Виберіть або введіть" tabindex="18">
+      <datalist id="browsers">
+        <option value="Chrome">
+        <option value="Firefox">
+        <option value="Edge">
+        <option value="Opera">
+        <option value="Safari">
+      </datalist>
+    </fieldset>
+  <button type="submit" tabindex="19">Відправити</button>
+  <button type="reset" tabindex="20">Очистити</button>
+</form>
+
+</body>
+</html>
+
