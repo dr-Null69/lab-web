@@ -1,0 +1,57 @@
+/* 2. Універсальний селектор (*) */
+/* Встановлює сімейство шрифту, розмір шрифту та міжрядковий інтервал для всього контенту [cite: 275] */
+* {
+    font-family: Arial, sans-serif; /* Сімейство шрифту Arial [cite: 275] */
+    font-size: 20px;               /* Розмір шрифту 20px [cite: 275] */
+    line-height: 40px;             /* Міжрядковий інтервал 40px [cite: 275] */
+}
+
+/* 3. Селектор тегів (p) */
+/* Задає зелений колір тексту та вирівнювання по центру для всіх абзаців [cite: 276] */
+p {
+    color: green;         /* Зелений колір тексту [cite: 276] */
+    text-align: center;   /* Вирівнювання по центру [cite: 276] */
+}
+
+/* 3. Селектор тегів (div) */
+/* Задає вирівнювання по ширині для всіх блочних елементів (div) [cite: 276] */
+div {
+    text-align: justify; /* Вирівнювання по ширині [cite: 276] */
+}
+
+/* 4. Селектор класів (.red-text) */
+/* Змінює колір тексту на червоний для 1-го та 3-го абзаців [cite: 277] */
+.red-text {
+    color: red; /* Червоний колір тексту [cite: 277] */
+}
+
+/* 5. Селектор класів (.nowrap-text) */
+/* Забороняє перенесення рядка (для 1-го абзацу) [cite: 278] */
+.nowrap-text {
+    white-space: nowrap; /* Весь текст відображається в один рядок [cite: 278] */
+}
+
+/* 6. Селектор ідентифікатора (#special-paragraph) */
+/* Відображає текст курсивом та жирним (для 2-го абзацу) [cite: 279] */
+#special-paragraph {
+    font-style: italic; /* Курсив [cite: 279] */
+    font-weight: bold;  /* Жирний [cite: 279] */
+}
+
+
+.shadow-text {
+    text-shadow: 5px -5px 3px #555;
+}
+
+
+.decoration-styles {
+    text-decoration: line-through; 
+    text-transform: uppercase;     
+    text-indent: 50px;             
+}
+
+
+.spacing-styles {
+    letter-spacing: 30px; 
+    word-spacing: 50px;  
+}
