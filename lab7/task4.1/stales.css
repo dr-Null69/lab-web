@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.vertical-nav {
+    width: 180px; 
+
+}
+
+.vertical-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.vertical-nav ul li {
+    float: none; 
+    position: relative;
+    margin-bottom: 2px; 
+}
+
+.vertical-nav .nav-item {
+    background-color: #337ab7; 
+    transition: background-color 0.15s;
+}
+
+.vertical-nav .nav-item:hover {
+    background-color: #286090;
+}
+
+.vertical-nav .nav-item .material-icons,
+.vertical-nav .nav-item .nav-text {
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    display: inline-block; 
+    vertical-align: middle;
+}
+
+.vertical-nav .dropdown {
+    display: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: #286090; 
+    min-width: 100%;
+    padding: 5px 0;
+}
+
+.vertical-nav .dropdown li {
+    float: none;
+    background-color: transparent; 
+    margin-bottom: 0;
+}
+
+.vertical-nav .dropdown a {
+    color: white;
+    padding: 8px 15px 8px 30px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+}
+
+.vertical-nav .dropdown a:hover {
+    background-color: #1a476f;
+}
+
+.vertical-nav li:hover > .dropdown {
+    display: block;
+}
+

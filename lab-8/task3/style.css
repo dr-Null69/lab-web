@@ -1,0 +1,130 @@
+
+body {
+    font-family:  "Segoe UI", Arial;
+    background-color: #f7f7f7; 
+    display: flex;
+    justify-content: center; 
+    padding: 20px; 
+}
+
+.weather-app {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.current-weather h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.current-weather .date {
+    color: #666; 
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.current-details {
+    display: flex;
+    align-items: start; 
+    gap: 30px; 
+}
+
+.main-info {
+    display: flex; 
+    align-items: center; 
+}
+
+.current-icon {
+    width: 60px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.temp {
+    font-size: 48px;
+    font-weight: 200; 
+}
+
+.secondary-info{
+    display: flex;
+    flex-direction: column-reverse;
+
+
+}
+
+.secondary-info p {
+
+    margin: 3px 0;
+    font-size: 14px;
+    color: #666; 
+
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: #eee;
+    margin: 20px 0;
+}
+
+.divider-small {
+    border: 0;
+    height: 1px;
+    background: #eee;
+    margin: 8px 0;
+}
+
+.forecast-list {
+    display: flex; 
+    flex-direction: column; 
+}
+
+.forecast-item {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 5px 0;
+}
+
+.day-name {
+    font-weight: 500;
+    flex-basis: 30%; 
+}
+
+.icon-temp-group {
+    display: flex; 
+    flex-basis: 45%;
+}
+
+.weather-icon {
+    width: 30px; 
+    height: 30px;
+    margin-right: 15px;
+}
+
+.temp-high {
+    width: 40px; 
+    text-align: right;
+}
+
+.temp-low {
+    color: #999; 
+    width: 30px; 
+    text-align: right;
+}
+
+.pollen {
+    font-size: 14px;
+    color: #666; 
+    flex-basis: 25%; 
+    text-align: right;
+}
+
+.forecast-item.today .day-name {
+    font-weight: 600;
+}
