@@ -1,0 +1,284 @@
+/* =============================== */
+/* 1. CSS VARIABLES (Змінні)       */
+/* =============================== */
+:root {
+    --color-primary: #e54c3c; /* Червоний */
+    --color-dark: #333333;
+    --color-light-gray: #f7f7f7;
+    --color-text-body: #666666;
+    --font-main: 'Poppins', sans-serif;
+    --spacing-section: 80px;
+    --spacing-grid-gap: 20px;
+}
+
+/* =============================== */
+/* 2. БАЗОВІ ТА ЗАГАЛЬНІ СТИЛІ     */
+/* =============================== */
+body {
+    font-family: var(--font-main);
+    color: var(--color-text-body);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0, 24;
+}
+
+h1, h2, h3, h4 {
+    color: var(--color-dark);
+    font-weight: 700;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Обробка переповнення контенту (приховати, якщо занадто довгий) */
+.excerpt {
+    max-height: 4.8em; /* Приблизно 3 рядки */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* =============================== */
+/* 3. СТИЛІ СТАНУ (:hover, :active, :focus) - Завдання 4, пункт 76 */
+/* =============================== */
+a, button {
+    text-decoration: none;
+    color: var(--color-dark);
+    transition: opacity 0.2s, transform 0.1s; 
+    outline-color: var(--color-primary); /* Для focus */
+}
+
+a:hover, button:hover {
+    opacity: 0.8;
+}
+
+a:focus, button:focus {
+    outline: 2px solid var(--color-primary); 
+    outline-offset: 2px;
+}
+
+a:active, button:active {
+    transform: scale(0.98); 
+}
+
+/* Стиль для кнопки CTA */
+.btn-contact {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: white !important;
+    padding: 10px 25px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.btn-contact:hover { opacity: 0.9; }
+
+
+/* =============================== */
+/* 4. FLEXBOX ВЕРСТКА ДЛЯ ДЕСКТОПУ */
+/* =============================== */
+
+/* HEADER (Базова верстка) */
+.main-header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px 15px;
+    border-bottom: 1px solid #eeeeee;
+}
+.nav-list {
+    display: flex; 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.nav-list li {
+    margin-left: 25px;
+}
+.burger-menu-btn {
+    display: none; /* Приховати на десктопі */
+}
+
+/* Секція "OUR AWESOME WORKS" (3 стовпці) */
+.works-grid {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: var(--spacing-grid-gap); 
+    margin-top: 40px;
+}
+.work-item {
+    /* Розрахунок для 3 стовпців */
+    flex: 1 1 calc(33.333% - var(--spacing-grid-gap) * 2 / 3); 
+    position: relative;
+    overflow: hidden;
+    /* Візуальні стилі для work-item тут... */
+}
+
+.section-header-text {
+    align-items: center;
+    display: flex;
+    font-size: 12px;
+    gap: 10px;
+
+}
+.section-header-text p{
+    color: var(--color-primary);
+    font-weight: bold;
+
+}
+.section-header {
+    display: flex;
+}
+
+.cta-section {
+    text-align: center;
+}
+
+.hero-intro {
+    background-color: var(--color-light-gray);
+    padding: var(--spacing-section) 0;
+
+    text-align: left;
+}
+/* Секція "WHAT DO WE DO" (4 стовпці) */
+.what-we-do {
+
+    padding: var(--spacing-section) 0;
+    text-align: left;
+}
+.hero-intro .container p {
+    font-size: 12px;
+}
+
+
+
+
+.services-container {
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 40px;
+}
+.service-item {
+    flex: 1; 
+    max-width: 250px; 
+    padding: 0 15px;
+}
+
+/* Секція "FROM THE JOURNAL" (2 стовпці) */
+.journal {
+    padding: var(--spacing-section) 0;
+}
+.journal-entries {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: var(--spacing-grid-gap);
+}
+.journal-entry {
+    display: flex; /* Розміщення зображення та тексту поруч */
+    flex: 1 1 calc(50% - var(--spacing-grid-gap) / 2); /* 2 елементи в ряд */
+    margin-bottom: var(--spacing-medium);
+}
+.entry-thumb {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    margin-right: 20px;
+    background-color: #ddd; /* Заглушка для зображення */
+}
+.entry-content {
+    flex-grow: 1;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--color-dark);
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+
+/* =============================== */
+/* 5. ADAPTIVITY (MEDIA QUERIES) - Завдання 5 */
+/* =============================== */
+
+/* --- Екран < 768px (Планшети) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Секція "Our awesome works" - 2 стовпці */
+    .work-item {
+        /* 100% / 2 = 50% */
+        flex: 1 1 calc(50% - var(--spacing-grid-gap) / 2); 
+    }
+
+    /* 2. Секція "What do we do" - 2 стовпці */
+    .services-container {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .service-item {
+        flex: 1 1 45%; /* 2 елементи в ряд */
+        margin-bottom: var(--spacing-medium);
+    }
+
+    /* 3. Секція "From the journal" - 1 стовпець */
+    .journal-entry {
+        flex: 1 1 100%; /* 1 елемент в ряд */
+        max-width: 100%;
+        margin-bottom: var(--spacing-medium);
+    }
+
+    /* 4. БУРГЕР-МЕНЮ (Завдання 5, пункт 145) */
+    .main-header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        background-color: white;
+        z-index: 1000;
+    }
+    .main-nav {
+        /* Приховати на мобільному */
+        display: none; 
+    }
+    .burger-menu-btn {
+        display: block; /* Показати кнопку */
+        /* Додайте тут стилі для бургер-іконки з псевдоелементами ::before та ::after */
+    }
+    /* .main-nav.active { display: flex; flex-direction: column; ... } */ /* Меню, що розкривається */
+}
+
+
+/* --- Екран < 576px (Мобільні пристрої) --- */
+@media (max-width: 576px) {
+    
+    /* 1. Секція "Our awesome works" - 1 стовпець */
+    .work-item {
+        flex: 1 1 100%; /* Повна ширина */
+    }
+
+    /* 2. Секція "What do we do" - 1 стовпець */
+    .service-item {
+        flex: 1 1 100%; /* Повна ширина */
+        max-width: 100%;
+    }
+
+    /* 3. Секція "From the journal" - 1 стовпець (структура вже змінена на 768px, але тут можна поправити внутрішні елементи) */
+    .journal-entry {
+        /* Приклад, якщо потрібно змінити розмір мініатюри */
+        display: block; /* Зображення над текстом */
+    }
+    .entry-thumb {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
